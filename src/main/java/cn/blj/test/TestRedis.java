@@ -1,4 +1,3 @@
-/*
 package cn.blj.test;
 
 import cn.blj.service.UserService;
@@ -13,7 +12,7 @@ public class TestRedis {
 
    @Test
    public void run1(){
-       String host="192.168.1.9";
+       String host="192.127.0.1";
        int port =6379;
        Jedis jedis=new Jedis(host,port);
        jedis.auth("123456");
@@ -28,4 +27,3 @@ public class TestRedis {
    }
 
 }
-*/
