@@ -11,7 +11,7 @@ public class TestRedisPool {
 
    @Test
    public void run1(){
-       String host="192.127.0.1";
+       String host="192.168.58.1";
        int port =6379;
        JedisPool pool =null;
        Jedis jedis =null;

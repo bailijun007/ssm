@@ -20,6 +20,21 @@
 
     <!-- 自动扫描包-->
     <context:component-scan base-package="cn.blj.controller"/>
+   <!-- Spring加载Properties配置文件-->
+    <!--方式一-->
+    <context:property-placeholder location="classpath:*.properties"/>
+
+    <!--方式二-->
+    <!--<bean id="prop"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:file.properties</value>
+            </list>
+        </property>
+    </bean>-->
+
+
     <!--视图解析器-->
     <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -49,5 +64,6 @@
 
     <!-- 支持mvc注解驱动 代替注解映射器和注解适配器 -->
     <mvc:annotation-driven conversion-service="myConverter" />
+
 
 </beans>

@@ -1,18 +1,14 @@
 package cn.blj.test;
 
-import cn.blj.service.UserService;
-import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import redis.clients.jedis.Jedis;
 
+import org.junit.Test;
+import redis.clients.jedis.Jedis;
 import java.util.List;
 
 public class TestRedis {
-
-   @Test
+    @Test
    public void run1(){
-       String host="192.127.0.1";
+      String host="192.168.58.1";
        int port =6379;
        Jedis jedis=new Jedis(host,port);
        jedis.auth("123456");
@@ -25,5 +21,7 @@ public class TestRedis {
             System.out.println(val);
         }
    }
+
+
 
 }

@@ -4,6 +4,7 @@ import cn.blj.dao.UserDao;
 import cn.blj.pojo.User;
 import cn.blj.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,17 @@ import java.util.UUID;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Value("${host}")
+    private String host;
+
+    @RequestMapping("/testContext")
+    public String testContext(Model model) {
+        model.addAttribute("host",host);
+       return "testContext";
+    }
+
+
 
     @RequestMapping("/findAll")
     public String findAll(Model model) {
